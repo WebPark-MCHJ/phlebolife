@@ -1,0 +1,163 @@
+.footer {
+  padding-top: 30px;
+  padding-bottom: 70px;
+  display: flex;
+  position: relative;
+
+  a {
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+  }
+
+  &__about {
+    .logo {
+      margin-bottom: 1em;
+
+      span {
+        display: none;
+      }
+    }
+
+    max-width: 35ch;
+
+    p {
+      font-size: 1.75rem;
+      line-height: 1.25;
+    }
+
+    .socials {
+      margin-top: 3em;
+      display: flex;
+
+      a {
+        margin-right: 1em;
+        font-size: 3rem;
+        color: $primary;
+        transition: 500ms ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+          -moz-backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &__schedule {
+    background: #fff;
+    padding: 35px;
+    box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.125);
+    border-radius: 24px;
+    position: absolute;
+    max-width: 33ch;
+    right: 10rem;
+    top: -5rem;
+    width: 100%;
+
+    h3 {
+      font-size: 2.5rem;
+      color: $primary;
+      margin-bottom: 0.5em;
+
+      .accent {
+        color: $secondary;
+      }
+    }
+
+    .calendar {
+      position: absolute;
+      top: -2rem;
+      right: 1.5rem;
+      font-size: 6rem;
+      color: $primary;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        font-size: 1.6rem;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__tab {
+    max-width: 50ch;
+    width: 100%;
+    padding: 0 3em;
+
+    .controllers {
+      margin-bottom: 3em;
+
+      button {
+        margin-right: 2em;
+        padding: 0.5em 1em;
+        font-size: 1.6rem;
+        background: $primary;
+        color: white;
+        font-weight: bold;
+        transition: 500ms ease-in-out;
+        cursor: pointer;
+        border: none;
+        border-radius: 14px;
+
+        &:hover {
+          opacity: 0.75;
+        }
+      }
+    }
+
+    .body {
+      position: relative;
+
+      .address {
+        font-style: normal;
+
+        &__location {
+          margin-bottom: 1em;
+
+          text-transform: initial;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1em;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+
+          svg {
+            margin-right: 0.75em;
+            font-size: 2rem;
+          }
+        }
+
+        &__tg {
+          font-size: 1.5rem;
+          margin-top: 3em;
+          font-weight: 500;
+          background-color: $primary;
+          color: white;
+          padding: 5px 20px;
+          border-radius: 14px;
+          text-align: center;
+
+          a {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}

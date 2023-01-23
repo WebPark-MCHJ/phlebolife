@@ -1,0 +1,139 @@
+.treatments {
+  padding-top: 2em;
+  padding-bottom: 3em;
+  position: relative;
+
+  &__title {
+    max-width: 35ch;
+    line-height: 1.15;
+    color: $primary;
+    margin-bottom: 1em;
+
+    .accent {
+      color: $secondary;
+    }
+  }
+
+  .list-of-treatments {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1em;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border-bottom: 0;
+
+    .treatment {
+      display: flex;
+      flex-direction: column;
+      width: 33.33%;
+      padding: 1.75em;
+      position: relative;
+      padding-bottom: 1.5em;
+      border-bottom: 1px solid #eee;
+
+      &:nth-child(3n + 2) {
+        position: relative;
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 1px;
+          height: 100%;
+          background: #eee;
+        }
+
+        &::after {
+          right: 1.75rem;
+        }
+
+        &::before {
+          left: -1rem;
+        }
+      }
+
+      &__name {
+        flex: 1;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        margin-bottom: 0.5em;
+        color: $primary;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #eee;
+      }
+
+      &__body {
+        line-height: 1.5;
+        max-width: 40ch;
+        margin-bottom: 2em;
+
+        * {
+          font-weight: 400;
+          font-family: "Roboto", sans-serif;
+          font-size: 1.6rem;
+        }
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-weight: 700;
+        color: $primary;
+        font-size: 1.6rem;
+
+        img {
+          margin-left: 0.5em;
+        }
+      }
+    }
+  }
+
+  &__load-more {
+    border: none;
+    background: transparent;
+    text-align: center;
+    padding: 0;
+    font-size: 1.4rem;
+    margin-top: 3em;
+    font-weight: 700;
+    display: block;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $primary;
+    transition: 300ms ease-in-out;
+    padding: 0.9em 1.75em;
+    border-radius: 15px;
+    cursor: pointer;
+    transform: translateX(-1.5em);
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .progress {
+    position: sticky;
+    top: 1rem;
+    float: right;
+    margin-right: -2rem;
+    background: #fafafa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 7.5px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: $primary;
+    font-weight: 700;
+    z-index: 1;
+
+    svg {
+      font-size: 2rem;
+      margin-right: 0.5em;
+      fill: $primary;
+      color: inherit;
+    }
+  }
+}

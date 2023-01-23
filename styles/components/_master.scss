@@ -1,0 +1,118 @@
+.master {
+  padding-top: 25px;
+  padding-bottom: 150px;
+
+  &__title {
+    color: $primary;
+    line-height: 1.15;
+    margin-bottom: 1.3em;
+
+    .accent {
+      color: $secondary;
+    }
+  }
+
+  &__list {
+    position: relative;
+    margin: -15px;
+  }
+
+  .event {
+    border-radius: 14px;
+    box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.125);
+    display: flex;
+    transition: 500ms;
+    overflow: hidden;
+    margin: 20px;
+
+    &__title {
+      font-size: 2.8rem;
+      line-height: 1.4;
+      font-weight: 500;
+      font-family: "Roboto", sans-serif;
+      margin-bottom: 1em;
+      color: $primary;
+    }
+
+    &__description {
+      line-height: 1.5;
+      font-size: 1.8rem;
+    }
+
+    .col {
+      &__info {
+        padding: 100px 75px;
+        width: 60%;
+      }
+
+      &__image {
+        width: 40%;
+        background: #fafafa;
+        position: relative;
+
+        img {
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    --swiper-theme-color: #2f61ad;
+    width: 100%;
+
+    &-slide {
+      -moz-transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    padding-bottom: 50px;
+
+    &-pagination {
+      margin-top: 50px;
+
+      &-bullet {
+        width: 70px;
+        height: 3px;
+        border-radius: 24px;
+      }
+    }
+  }
+
+  .controllers {
+    z-index: 9;
+    position: absolute;
+    top: -5rem;
+    padding: 5px;
+    border-radius: 14px;
+    right: 10rem;
+
+    button {
+      font-size: 3.5rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+      margin-right: 3rem;
+      transition: 500ms;
+
+      &:hover {
+        opacity: 0.5;
+        -moz-backface-visibility: visible;
+        -webkit-backface-visibility: visible;
+        backface-visibility: hidden;
+        transform: scale(1.1);
+      }
+
+      svg {
+        color: $primary;
+        fill: $primary;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

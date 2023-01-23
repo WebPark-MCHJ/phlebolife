@@ -1,0 +1,66 @@
+.price-page {
+	padding: 0;
+	max-width: 1320px;
+	margin: 0 auto;
+	position: relative;
+	padding-left: 130px;
+	height: auto;
+
+	&__main {
+		padding-bottom: 50px;
+	}
+
+	&__home {
+		position: sticky;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%) translateX(-10rem);
+		font-size: 3rem;
+		color: $primary;
+	}
+
+	h1 {
+		font-size: 46px;
+		text-align: center;
+		font-weight: 700;
+		color: $primary;
+		line-height: 1.1;
+		text-indent: -15rem;
+		margin: 7rem 0 1.5em;
+
+		.accent {
+			color: $secondary;
+		}
+	}
+
+	&__row {
+		h2 {
+			color: $secondary;
+			font-weight: 700;
+			font-size: 20px;
+			margin-bottom: 0.75em;
+		}
+
+		margin-bottom: 5rem;
+	}
+
+	&__list {
+		width: 90%;
+
+		li {
+			display: flex;
+			justify-content: space-between;
+			padding: 7.5px 20px;
+			background: #dcf2ff;
+			border-radius: 100px;
+			margin: 1em 0;
+		}
+	}
+
+	.extra {
+		color: $primary;
+		margin: 2rem 0 0;
+		max-width: 125ch;
+		line-height: 1.5;
+	}
+}

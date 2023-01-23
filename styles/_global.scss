@@ -1,0 +1,71 @@
+// Colors
+$primary: #2f61ad;
+$secondary: #be1f35;
+// $secondary: rgb(238, 29, 36);
+$tertiary: #00a4e4;
+$rare: #007fbd;
+$dark-100: rgb(0, 0, 0);
+$dark-75: rgba(0, 0, 0, 0.75);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+}
+
+#__next {
+  height: 100vh;
+
+  > div {
+    height: inherit;
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    main {
+      flex-grow: 1;
+    }
+  }
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+  color: $dark-75;
+}
+
+header,
+footer,
+section {
+  padding: 5em calc(50% - 625px) 0;
+}
+
+a {
+  font-family: "poppins";
+  text-transform: lowercase;
+}
+
+.fadeIn {
+  animation: fadeIn 500ms linear forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

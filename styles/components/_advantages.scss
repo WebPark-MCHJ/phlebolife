@@ -1,0 +1,38 @@
+.advantages {
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  &__title {
+    color: $primary;
+    line-height: 1.15;
+    margin-bottom: 0.75em;
+    max-width: 35ch;
+
+    .accent {
+      color: $secondary;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.7em;
+  }
+
+  .advantage {
+    width: calc((100% / 3) - 2em);
+    margin: 1em;
+    display: flex;
+    align-items: center;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      font-family: "Roboto", sans-serif;
+    }
+
+    img {
+      margin-right: 0.75em;
+    }
+  }
+}
