@@ -102,16 +102,21 @@
         margin-right: 2em;
         padding: 0.5em 1em;
         font-size: 1.6rem;
-        background: $primary;
-        color: white;
+        background: none;
+        color: $primary;
         font-weight: bold;
-        transition: 500ms ease-in-out;
+        transition: 250ms ease-in-out;
         cursor: pointer;
         border: none;
         border-radius: 14px;
+        border: 2px solid transparent;
 
         &:hover {
           opacity: 0.75;
+        }
+
+        &.active {
+          border: 2px solid $primary;
         }
       }
     }
@@ -147,14 +152,14 @@
           font-size: 1.5rem;
           margin-top: 3em;
           font-weight: 500;
-          background-color: $primary;
-          color: white;
+          color: $primary;
           padding: 5px 20px;
           border-radius: 14px;
           text-align: center;
 
           a {
             display: inline;
+            color: inherit;
           }
         }
       }

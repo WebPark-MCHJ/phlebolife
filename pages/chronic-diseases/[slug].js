@@ -31,17 +31,32 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
 								? "Оставьте заявку на консультацию"
 								: "Флеболог кўригига ёзилинг"}
 						</h2>
-
 						<div className="sign-up__field field">
 							<label>Ваше имя</label>
 							<input type="email" />
 						</div>
-
 						<div className="sign-up__field field">
 							<label>Номер телефона</label>
 							<input type="text" />
 						</div>
-
+						<label className="city-label">
+							{locale == "ru" ? "Ташкент" : "Тошкент"}{" "}
+							<input
+								type="radio"
+								name="city"
+								value={locale == "ru" ? "Ташкент" : "Тошкент"}
+							/>
+						</label>
+						<label className="city-label">
+							{locale == "ru" ? "Самарканд" : "Самарқанд"}{" "}
+							<input
+								type="radio"
+								name="city"
+								value={
+									locale == "ru" ? "Самарканд" : "Самарқанд"
+								}
+							/>
+						</label>
 						<input
 							type="submit"
 							value={locale === "ru" ? "Отправить" : "Юбориш"}

@@ -2,6 +2,7 @@ import Layout from "../../src/components/Common/Layout";
 import db from "../../src/database/db.json";
 import AppContext from "../../src/context/AppContext";
 import { BsArrowLeft } from "react-icons/bs";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 
 const AboutPage = ({ db, locale }) => {
@@ -75,6 +76,17 @@ export const getStaticProps = async ({ locale }) => {
 		props: {
 			db,
 			locale,
+			...(await serverSideTranslations(locale, [
+				"common",
+				"banner",
+				"about",
+				"diseases",
+				"treatments",
+				"advantages",
+				"doctors",
+				"masters",
+				"footer",
+			])),
 		},
 	};
 };

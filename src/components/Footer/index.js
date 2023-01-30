@@ -5,8 +5,10 @@ import { MdOutlineEmail } from "react-icons/md";
 import AppContext from "../../context/AppContext";
 import { useContext, useState } from "react";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 const Footer = () => {
+  const { locale } = useRouter();
   const { db } = useContext(AppContext);
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
   const { t: translate } = useTranslation("footer");
@@ -53,7 +55,11 @@ const Footer = () => {
       <div className="footer__tab">
         <div className="controllers">
           {db.contacts.map(({ city }, index) => (
-            <button key={index} onClick={() => handleTabChange(index)}>
+            <button
+              className={`${currentTabIndex == index ? "active" : ""}`}
+              key={index}
+              onClick={() => handleTabChange(index)}
+            >
               {city}
             </button>
           ))}
@@ -74,7 +80,13 @@ const Footer = () => {
                     phlebolife@gmail.com
                   </a>
                   <p className="address__tg">
-                    Телеграмм группа: <a>t.me/phlebolife</a> для вопросов
+                    {locale === "ru"
+                      ? "Подпишитесь на наш телеграм:"
+                      : "Телеграм каналимизга обуна бўлинг"}
+                    <a href="https://t.me/phlebolife">
+                      {" "}
+                      https://t.me/phlebolife
+                    </a>
                   </p>
                 </address>
               )
@@ -91,36 +103,69 @@ const Footer = () => {
           {translate("schedule.title.original", { returnObject: true })}
         </h3>
 
-        <ul>
-          <li>
-            <span>Понедельник |</span>
-            <span> 9:00 - 18:00</span>
-          </li>
-          <li>
-            <span>Вторник |</span>
-            <span> 9:00 - 18:00</span>
-          </li>
-          <li>
-            <span>Среда |</span>
-            <span> 9:00 - 18:00</span>
-          </li>
-          <li>
-            <span>Четверг |</span>
-            <span> 9:00 - 18:00</span>
-          </li>
-          <li>
-            <span>Пятница |</span>
-            <span> 9:00 - 18:00</span>
-          </li>
-          <li>
-            <span>Суббота |</span>
-            <span> 9:00 - 16:00</span>
-          </li>
-          <li>
-            <span>Воскресенье |</span>
-            <span> Выходной</span>
-          </li>
-        </ul>
+        {currentTabIndex == 0 ? (
+          <ul>
+            <li>
+              <span>{locale == "ru" ? "Понедельник" : "Душанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Вторник" : "Сешанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Среда" : "Чоршанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Четверг" : "Пайшанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Пятница" : "Жума"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Суббота" : "Шанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Воскресенье" : "Якшанба"} | </span>
+              <span>{locale == "ru" ? "Выходной" : "Дам олиш куни"}</span>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <span>{locale == "ru" ? "Понедельник" : "Душанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Вторник" : "Сешанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Среда" : "Чоршанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Четверг" : "Пайшанба"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Пятница" : "Жума"} |</span>
+              <span> 9:00 - 18:00</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Суббота" : "Шанба"} | </span>
+              <span>{locale == "ru" ? "Выходной" : "Дам олиш куни"}</span>
+            </li>
+            <li>
+              <span>{locale == "ru" ? "Воскресенье" : "Якшанба"} |</span>
+              <span> 9:00 - 18:00 </span>
+            </li>
+          </ul>
+        )}
       </div>
     </footer>
   );
