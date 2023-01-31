@@ -4,6 +4,7 @@ import AppContext from "../../src/context/AppContext";
 import { BsArrowLeft } from "react-icons/bs";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
+import Head from "next/head";
 
 const AboutPage = ({ db, locale }) => {
 	return (

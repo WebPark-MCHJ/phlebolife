@@ -16,7 +16,7 @@ const HomePage = ({ db, locale, database }) => {
   return (
     <AppContext.Provider value={{ database, db: db[locale], locale }}>
       <Head>
-        <title>Development</title>
+        <title>Главная | Клиника современной флебологии Phlebolife</title>
       </Head>
 
       <Layout>

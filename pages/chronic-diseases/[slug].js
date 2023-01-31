@@ -6,6 +6,7 @@ import RichContent from "../../src/components/RichContent";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 const ChronicDiseasesPage = ({ data, locale, slugs }) => {
 	const [currentPath, setCurrentPath] = useState();
@@ -19,6 +20,9 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
 
 	return (
 		<AppContext.Provider value={{ db: db[locale], locale }}>
+			<Head>
+				<title>{data.attributes.title}</title>
+			</Head>
 			<Layout
 				className={`page ${currentPath !== asPath ? "fadeIn" : ""}`}
 			>
