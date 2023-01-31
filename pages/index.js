@@ -78,6 +78,6 @@ export const getStaticProps = async ({ locale }) => {
       ])),
     },
 
-    revalidate: 60,
+    revalidate: 10,
   };
 };
