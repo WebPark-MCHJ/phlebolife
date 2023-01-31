@@ -1,8 +1,10 @@
 import "../styles/app.scss";
 import { appWithTranslation } from "next-i18next";
 import { usePageLoading } from "../src/utils/usePageLoading";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const { locale } = useRouter();
   const { isPageLoading } = usePageLoading();
 
   return (
@@ -16,7 +18,11 @@ function MyApp({ Component, pageProps }) {
             <div></div>
           </div>
 
-          <p>Пожалуйста подождите, страница загружается...</p>
+          <p>
+            {locale == "ru"
+              ? "Пожалуйста подождите, страница загружается..."
+              : "Илтимос кутинг, сахифа юкланмоқда..."}
+          </p>
         </div>
       ) : (
         <Component {...pageProps} />
