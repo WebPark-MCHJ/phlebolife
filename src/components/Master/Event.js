@@ -14,7 +14,7 @@ const Event = ({ attributes }) => {
       <div className="col col__image">
         <Image
           alt="Мастерклассы"
-          src={`http://127.0.0.1:1337${attributes.images.data[0].attributes.url}`}
+          src={`https://webpark.uz${attributes.images.data[0].attributes.url}`}
           width={700}
           height={600}
           layout="responsive"

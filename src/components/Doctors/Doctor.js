@@ -10,7 +10,7 @@ const Doctor = ({ attributes }) => {
           width={600}
           height={600}
           layout="responsive"
-          src={`http://127.0.0.1:1337${attributes.photo.data.attributes.url}`}
+          src={`https://webpark.uz${attributes.photo.data.attributes.url}`}
           alt={attributes.photo.data.attributes.alternativeText}
           objectFit="contain"
         />

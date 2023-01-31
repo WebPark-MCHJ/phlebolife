@@ -7,7 +7,7 @@ const nextConfig = {
   i18n,
 
   images: {
-    domains: ["127.0.0.1", "webpark.uz"],
+    domains: ["127.0.0.1", "webpark.uz", "localhost"],
   },
 };
 
