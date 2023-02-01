@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "name",
+    "name": "Ваше имя",
     "type": "name",
     "placeholder": "",
     "maxLength": "",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name": "phone",
+    "name": "Номер телефона",
     "type": "tel",
     "placeholder": "+(998) ** *** ****",
     "maxLength": 13,
