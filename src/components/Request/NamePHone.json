@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "name",
+    "type": "name",
+    "placeholder": "",
+    "maxLength": "",
+    "error": "errors.name?.message"
+  },
+  {
+    "id": 2,
+    "name": "phone",
+    "type": "tel",
+    "placeholder": "+(998) ** *** ****",
+    "maxLength": 13,
+    "error": "errors.tel?.message"
+  }
+]

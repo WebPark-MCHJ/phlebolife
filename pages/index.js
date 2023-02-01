@@ -68,6 +68,7 @@ export const getStaticProps = async ({ locale }) => {
       ...(await serverSideTranslations(locale, [
         "common",
         "banner",
+        "request",
         "about",
         "diseases",
         "treatments",
