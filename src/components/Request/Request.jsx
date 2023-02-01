@@ -52,7 +52,7 @@ function Request({ setActive }) {
 
   return (
     <>
-      <div className={`request__black ${close ? "" : "request__close"}`}></div>
+      <div className={`request__black ${close ? "" : "request__close"}`} />
       <section className={`request ${close ? "" : "request__close-big"}`}>
         <div className="container">
           <div className="request__bigbox">

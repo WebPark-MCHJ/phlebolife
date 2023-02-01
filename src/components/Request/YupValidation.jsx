@@ -1,10 +1,7 @@
 import * as yup from "yup";
 
 export const YupValidation = yup.object().shape({
-  name: yup
-    .string()
-    .required("required")
-    .matches(/^[ A-Za-z]+$/i, "name-matches"),
+  name: yup.string().required("required"),
   tel: yup
     .string()
     .required("required")

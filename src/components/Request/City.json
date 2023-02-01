@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "name": "tashkent",
-    "city": "tashkent"
+    "name": "Ташкент",
+    "city": "Ташкент"
   },
   {
     "id": 2,
-    "name": "samarkhand",
-    "city": "samarqand"
+    "name": "Самарканд",
+    "city": "Самарканд"
   }
 ]

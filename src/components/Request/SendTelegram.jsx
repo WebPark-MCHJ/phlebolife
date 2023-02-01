@@ -12,7 +12,7 @@ export const sendTelegram = (data) => {
     }
   ).then(
     (success) => {
-      console.log("send message");
+      console.log("The msg has been sent successfully");
     },
     (error) => {
       console.log(error);
