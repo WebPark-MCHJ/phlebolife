@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import PageRequest from "../../src/components/PageRequest/PageRequest";
+import Request from "../../src/components/Request/Request";
 
 const ChronicDiseasesPage = ({ data, locale, slugs }) => {
   const [currentPath, setCurrentPath] = useState();
@@ -25,7 +26,7 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
         <RichContent>{data.body}</RichContent>
 
         <aside>
-          <PageRequest locale={locale} />
+          <Request />
 
           <div className="links">
             <h2>{locale === "ru" ? "Другие болезни" : "Бошқа касалликлар"}</h2>
