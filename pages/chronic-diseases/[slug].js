@@ -92,17 +92,14 @@ export const getStaticProps = async ({ locale, params }) => {
   };
 };
 
-export async function getStaticPaths({ locale, locales }) {
+export async function getStaticPaths({ locale }) {
   const { data } = await getData({
     url: "https://webpark.uz",
     endpoint: `/api/chronic-diseases?locale=${locale}`,
   });
 
   const genPath = data.map((item) => {
-    return locales.map((locale) => ({
-      params: { slug: item.attributes.slug },
-      locale,
-    }));
+    return { params: { slug: item.attributes.slug }, locale };
   });
 
   return {
