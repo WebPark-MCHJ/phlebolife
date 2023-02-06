@@ -10,6 +10,7 @@ import Citys from "../Request/City.json";
 
 //translation
 import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //icon
 import { MdCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
