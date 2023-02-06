@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { getData } from "../../src/utils/fetchers";
 import Layout from "../../src/components/Common/Layout";
 import AppContext from "../../src/context/AppContext";
@@ -7,8 +8,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import PageRequest from "../../src/components/PageRequest/PageRequest";
-
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const ChronicDiseasesPage = ({ data, locale, slugs }) => {
   const [currentPath, setCurrentPath] = useState();
