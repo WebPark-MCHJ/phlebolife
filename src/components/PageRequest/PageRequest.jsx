@@ -10,7 +10,6 @@ import Citys from "../Request/City.json";
 
 //translation
 import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 //icon
 import { MdCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
@@ -21,7 +20,7 @@ function PageRequest({ locale }) {
   let [check, setCheck] = useState("");
   let [success, setSuccess] = useState(false);
 
-  const [t] = useTranslation("request");
+  const { t } = useTranslation("request");
 
   const {
     register,
@@ -106,14 +105,13 @@ function PageRequest({ locale }) {
           <p className="sign-up__error">{t(errors.city?.message)}</p>
         )}
 
-        {success ? (
+        {success && (
           <>
             <p className="request__success">{t("The message has...")}</p>
             <p className="request__desc">{t("Thank you for...")}</p>
           </>
-        ) : (
-          ""
         )}
+
         <input type="submit" value={locale === "ru" ? "Отправить" : "Юбориш"} />
       </form>
     </div>
@@ -121,11 +119,3 @@ function PageRequest({ locale }) {
 }
 
 export default PageRequest;
-
-export async function getServerSideProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["request"])),
-    },
-  };
-}

@@ -25,7 +25,7 @@ function Request({ setActive }) {
   let [success, setSuccess] = useState(false);
   const { locale } = useRouter();
 
-  const [t] = useTranslation("request");
+  const { t } = useTranslation("request");
 
   const closeHandler = () => {
     setClose(false);

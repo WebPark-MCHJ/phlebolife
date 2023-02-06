@@ -77,7 +77,20 @@ export const getServerSideProps = async ({ locale, params }) => {
       slugs,
       locale,
       db,
-      ...(await serverSideTranslations(locale, ["common", "request"])),
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "banner",
+        "request",
+        "about",
+        "diseases",
+        "treatments",
+        "advantages",
+        "doctors",
+        "masters",
+        "footer",
+      ])),
     },
+
+    revalidat: 10,
   };
 };
