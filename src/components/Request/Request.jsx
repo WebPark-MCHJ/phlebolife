@@ -13,6 +13,7 @@ import Citys from "./City.json";
 
 //tranlation
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 //icon
 import { FiX } from "react-icons/fi";
@@ -22,6 +23,7 @@ function Request({ setActive }) {
   let [close, setClose] = useState(true);
   let [check, setCheck] = useState("");
   let [success, setSuccess] = useState(false);
+  const { locale } = useRouter();
 
   const [t] = useTranslation("request");
 
@@ -41,9 +43,7 @@ function Request({ setActive }) {
   });
 
   const onSubmit = (data) => {
-    sendTelegram(data);
-
-    setSuccess(true);
+    sendTelegram(data, setSuccess);
 
     setTimeout(() => {
       closeHandler();
@@ -65,7 +65,7 @@ function Request({ setActive }) {
               </div>
               <form onSubmit={handleSubmit(onSubmit)} className="request__form">
                 <div className="request__ibox">
-                  {NamePhone.map((post, key) => {
+                  {NamePhone[locale].map((post, key) => {
                     return (
                       <label
                         key={key + 997}
@@ -98,7 +98,7 @@ function Request({ setActive }) {
                 <div className="request__ibox">
                   <p className="request__name">{t("city")}</p>
 
-                  {Citys.map((post, key) => {
+                  {Citys[locale].map((post, key) => {
                     return (
                       <label
                         key={key + 234}
@@ -111,7 +111,7 @@ function Request({ setActive }) {
                           type="radio"
                           name={"city"}
                           id={post.city}
-                          value={post.name}
+                          value={post.city}
                           {...register("city")}
                         />
                         <span htmlFor={post.city}>
@@ -126,7 +126,7 @@ function Request({ setActive }) {
                               }`}
                             />
                           )}
-                          {t(post.name)}
+                          {t(post.city)}
                         </span>
                       </label>
                     );

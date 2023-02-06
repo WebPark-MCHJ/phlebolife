@@ -1,18 +1,38 @@
-[
-  {
-    "id": 1,
-    "name": "Ваше имя",
-    "type": "name",
-    "placeholder": "",
-    "maxLength": "",
-    "error": "errors.name?.message"
-  },
-  {
-    "id": 2,
-    "name": "Номер телефона",
-    "type": "tel",
-    "placeholder": "+(998) ** *** ****",
-    "maxLength": 13,
-    "error": "errors.tel?.message"
-  }
-]
+{
+  "uz": [
+    {
+      "id": 1,
+      "name": "Исмингиз",
+      "type": "name",
+      "placeholder": "",
+      "maxLength": "",
+      "error": "errors.name?.message"
+    },
+    {
+      "id": 2,
+      "name": "Телефон рақамингиз",
+      "type": "tel",
+      "placeholder": "+(998) ** *** ****",
+      "maxLength": 13,
+      "error": "errors.tel?.message"
+    }
+  ],
+  "ru": [
+    {
+      "id": 1,
+      "name": "Ваше имя",
+      "type": "name",
+      "placeholder": "",
+      "maxLength": "",
+      "error": "errors.name?.message"
+    },
+    {
+      "id": 2,
+      "name": "Номер телефона",
+      "type": "tel",
+      "placeholder": "+(998) ** *** ****",
+      "maxLength": 13,
+      "error": "errors.tel?.message"
+    }
+  ]
+}

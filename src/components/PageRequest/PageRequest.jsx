@@ -5,6 +5,7 @@ import { YupValidation } from "../Request/YupValidation";
 
 //database
 import NamePhone from "../Request/NamePHone.json";
+import { useRouter } from "next/router";
 import Citys from "../Request/City.json";
 
 //translation
@@ -31,8 +32,7 @@ function PageRequest({ locale }) {
   });
 
   const onSubmit = (data) => {
-    sendTelegram(data);
-    setSuccess(true);
+    sendTelegram(data, setSuccess);
     reset();
 
     setTimeout(() => {
@@ -48,7 +48,7 @@ function PageRequest({ locale }) {
             ? "Оставьте заявку на консультацию"
             : "Флеболог кўригига ёзилинг"}
         </h2>
-        {NamePhone.map((post, key) => {
+        {NamePhone[locale].map((post, key) => {
           return (
             <div key={key + 3644} className="sign-up__field field">
               <label>{t(post.name)}</label>
@@ -70,7 +70,7 @@ function PageRequest({ locale }) {
           );
         })}
 
-        {Citys.map((post, key) => {
+        {Citys[locale].map((post, key) => {
           return (
             <label
               key={key + 2132}
@@ -83,7 +83,7 @@ function PageRequest({ locale }) {
                 type="radio"
                 name={"city"}
                 id={post.city}
-                value={post.name}
+                value={post.city}
                 {...register("city")}
               />
               <span htmlFor={post.city}>
@@ -96,7 +96,7 @@ function PageRequest({ locale }) {
                     }`}
                   />
                 )}
-                {t(post.name)}
+                {t(post.city)}
               </span>
             </label>
           );
@@ -120,7 +120,6 @@ function PageRequest({ locale }) {
 }
 
 export default PageRequest;
-
 
 // export async function getServerSideProps({ locale }) {
 //   return {

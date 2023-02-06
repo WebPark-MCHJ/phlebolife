@@ -1,12 +1,17 @@
 import Image from "next/image";
 import consultationIcon from "../../assets/images/consultation.png";
 import { useTranslation } from "next-i18next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Request from "../Request/Request";
 
 export const Cta = () => {
   const { t: translate } = useTranslation("banner");
   const [active, setActive] = useState(false);
+  useEffect(() => {  
+    active
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "");
+  }, [active]);
 
   return (
     <>

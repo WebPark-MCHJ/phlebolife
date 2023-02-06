@@ -26,7 +26,7 @@ const TreatmentServicesPage = ({ data, locale, slugs }) => {
         <RichContent>{data.body}</RichContent>
 
         <aside>
-          <PageRequest />
+          <PageRequest locale={locale} />
 
           <div className="links">
             <h2>{locale === "ru" ? "Другие услуги" : "Бошқа хизматларимиз"}</h2>
