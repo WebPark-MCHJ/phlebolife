@@ -22,6 +22,7 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
   return (
     <AppContext.Provider value={{ db: db[locale], locale }}>
       <Layout className={`page ${currentPath !== asPath ? "fadeIn" : ""}`}>
+        <h1>Hello, {console.log(slugs)}</h1>
         <RichContent>{data.body}</RichContent>
 
         <aside>
@@ -53,7 +54,7 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
 
 export default ChronicDiseasesPage;
 
-export const getServerSideProps = async ({ locale, params }) => {
+export const getStaticProps = async ({ locale, params }) => {
   const { data } = await getData({
     url: "http://webpark.uz",
     endpoint: `/api/chronic-diseases?filters[slug]=${params.slug}&locale=${locale}`,
@@ -91,3 +92,19 @@ export const getServerSideProps = async ({ locale, params }) => {
     },
   };
 };
+
+export async function getStaticPaths({ locale }) {
+  const { data } = await getData({
+    url: "https://webpark.uz",
+    endpoint: `/api/chronic-diseases?locale=${locale}`,
+  });
+
+  const genPath = data.map((item) => {
+    return { params: { slug: item.attributes.slug } };
+  });
+
+  return {
+    paths: [...genPath],
+    fallback: "blocking", // can also be true or 'blocking'
+  };
+}
