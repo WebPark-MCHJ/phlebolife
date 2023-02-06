@@ -22,7 +22,6 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
   return (
     <AppContext.Provider value={{ db: db[locale], locale }}>
       <Layout className={`page ${currentPath !== asPath ? "fadeIn" : ""}`}>
-        <h1>Hello, {console.log(slugs)}</h1>
         <RichContent>{data.body}</RichContent>
 
         <aside>
