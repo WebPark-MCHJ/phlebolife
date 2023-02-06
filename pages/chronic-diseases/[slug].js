@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import PageRequest from "../../src/components/PageRequest/PageRequest";
-import Request from "../../src/components/Request/Request";
 
 const ChronicDiseasesPage = ({ data, locale, slugs }) => {
   const [currentPath, setCurrentPath] = useState();
@@ -26,7 +25,7 @@ const ChronicDiseasesPage = ({ data, locale, slugs }) => {
         <RichContent>{data.body}</RichContent>
 
         <aside>
-          <Request />
+          <PageRequest locale={locale} />
 
           <div className="links">
             <h2>{locale === "ru" ? "Другие болезни" : "Бошқа касалликлар"}</h2>
@@ -93,14 +92,17 @@ export const getStaticProps = async ({ locale, params }) => {
   };
 };
 
-export async function getStaticPaths({ locale }) {
+export async function getStaticPaths({ locale, locales }) {
   const { data } = await getData({
     url: "https://webpark.uz",
     endpoint: `/api/chronic-diseases?locale=${locale}`,
   });
 
   const genPath = data.map((item) => {
-    return { params: { slug: item.attributes.slug } };
+    return locales.map((locale) => ({
+      params: { slug: item.attributes.slug },
+      locale,
+    }));
   });
 
   return {

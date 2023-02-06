@@ -5,14 +5,11 @@ import { BsArrowLeft } from "react-icons/bs";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import Head from "next/head";
-import Request from "../../src/components/Request/Request";
 
 const AboutPage = ({ db, locale }) => {
 	return (
 		<AppContext.Provider value={{ db: db[locale], locale }}>
 			<Layout className="about-page">
-				<Request />
-
 				<section>
 					<h2>
 						О клинике{" "}
