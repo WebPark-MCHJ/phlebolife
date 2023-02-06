@@ -1,7 +1,7 @@
 export const sendTelegram = (data, setSuccess) => {
   let bot = {
-    token: "2066432931:AAGbNgv8wN_A-i1-3PeNlOg5Sz0KNHLW6D4",
-    chatID: "-1001865653432",
+    token: "6065086630:AAFN2wNm_ZFJUhOcotq52-xc5V-xSDr_Jw0",
+    chatID: "-1001739892818",
     message: `<b>Ism Familya:</b> +${data.name} %0A<b>Nomer:</b> +${data.tel} %0A<b>Shaxar:</b> +${data.city}`,
   };
 
