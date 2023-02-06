@@ -121,10 +121,10 @@ function PageRequest({ locale }) {
 
 export default PageRequest;
 
-// export async function getServerSideProps({ locale }) {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ["request"])),
-//     },
-//   };
-// }
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["request"])),
+    },
+  };
+}
