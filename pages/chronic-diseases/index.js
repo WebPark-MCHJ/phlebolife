@@ -11,6 +11,8 @@ const AboutPage = ({ db, locale }) => {
 	return (
 		<AppContext.Provider value={{ db: db[locale], locale }}>
 			<Layout className="about-page">
+				<Request />
+
 				<section>
 					<h2>
 						О клинике{" "}
