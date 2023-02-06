@@ -90,7 +90,5 @@ export const getServerSideProps = async ({ locale, params }) => {
         "footer",
       ])),
     },
-
-    revalidat: 10,
   };
 };

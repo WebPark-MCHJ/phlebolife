@@ -78,7 +78,5 @@ export const getStaticProps = async ({ locale }) => {
         "footer",
       ])),
     },
-
-    revalidate: 10,
   };
 };
