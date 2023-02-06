@@ -77,7 +77,7 @@ export const getServerSideProps = async ({ locale, params }) => {
       slugs,
       locale,
       db,
-      ...(await serverSideTranslations(locale, ["request"])),
+      ...(await serverSideTranslations(locale, ["common", "request"])),
     },
   };
 };
