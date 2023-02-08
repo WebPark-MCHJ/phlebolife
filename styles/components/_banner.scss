@@ -129,13 +129,13 @@
   // Media
   @media (max-width: 768px) {
     .content {
-      padding: 10vh 0 5vh;
+      padding: 20vh 0 5vh;
     }
 
     .cta {
       &__title {
         font-size: 8rem;
-        font-size: clamp(5rem, 15vw, 8rem);
+        font-size: clamp(4.6rem, 17vw, 8rem);
       }
 
       &__subtitle {

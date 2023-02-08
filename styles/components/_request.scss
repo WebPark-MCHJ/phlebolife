@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 10000;
   animation: sign 0.3s ease;
 
   &__black {
@@ -17,26 +17,30 @@
     height: 100vh;
     background-color: #000;
     opacity: 0.5;
-    z-index: 999;
+    z-index: 9999;
     animation: black 0.4s ease;
   }
 
   &__bigbox {
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-150px);
+    transform: translateY(-100px);
+    z-index: 100001;
   }
 
   &__box {
-    width: 500px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
     background-color: #fff;
     box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 6px;
-    z-index: 1;
+    z-index: 100001;
     padding: 15px 0;
   }
 
@@ -120,7 +124,7 @@
   }
 
   &__input-error {
-    border: 2px solid $secondary;
+    border-color: $secondary;
 
     &:focus {
       box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%),
@@ -214,8 +218,69 @@
 
 @media screen and (max-width: 576px) {
   .request {
+    &__topbox {
+      padding: 0 20px 15px;
+    }
+
+    &__form {
+      padding: 10px 30px;
+    }
+
+    &__title {
+      font-size: 15px;
+    }
+
+    &__xbtn {
+      font-size: 18px;
+    }
+
+    &__ibox {
+      margin-bottom: 15px;
+    }
+
+    &__name {
+      font-size: 15px;
+    }
+
+    &__input {
+      border-width: 1px;
+      font-size: 16px;
+    }
+
     &__box {
       width: 90%;
+      max-width: 90%;
+    }
+
+    &__error {
+      font-size: 13px;
+    }
+
+    &__rlabel {
+      margin-top: 8px;
+
+      & span {
+        font-size: 15px;
+      }
+    }
+
+    &__radio-icon {
+      font-size: 18px;
+    }
+
+    &__btn {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    &__desc,
+    &__success {
+      font-size: 13px;
+    }
+
+    &__success {
+      font-size: 18px;
+      color: green;
     }
   }
 }

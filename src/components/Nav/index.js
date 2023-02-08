@@ -3,8 +3,9 @@ import { Link as SmoothLink } from "react-scroll";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import { useState } from "react";
+import LangChanger from "../LangChanger";
 
-const Nav = () => {
+const Nav = ({ setActive, active }) => {
   const { db } = useContext(AppContext);
   const [activeLink, setActiveLink] = useState();
 
@@ -12,7 +13,7 @@ const Nav = () => {
     setActiveLink((prevState) => (prevState = index));
 
   return (
-    <div className="nav">
+    <div className={`nav ${active ? "nav-active" : ""}`}>
       <ul className="nav-list">
         {db.navigation.map((item, index) => {
           if (item.path[0] === "/") {
@@ -25,7 +26,11 @@ const Nav = () => {
                 }`}
                 key={index}
               >
-                <Link legacyBehavior href={item.path}>
+                <Link
+                  onClick={() => setActive(false)}
+                  legacyBehavior
+                  href={item.path}
+                >
                   <a>{item.title}</a>
                 </Link>
               </li>
@@ -40,13 +45,22 @@ const Nav = () => {
               }`}
               key={index}
             >
-              <SmoothLink smooth={true} spy={true} to={item.path}>
+              <SmoothLink
+                onClick={() => setActive(false)}
+                smooth={true}
+                spy={true}
+                to={item.path}
+              >
                 {item.title}
               </SmoothLink>
             </li>
           );
         })}
       </ul>
+
+      <div className="nav-box">
+        <LangChanger />
+      </div>
     </div>
   );
 };
