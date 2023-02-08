@@ -10,4 +10,8 @@ h4 {
 
 h2 {
   font-size: 4rem;
+
+  @media (max-width: 768px) {
+    font-size: clamp(2rem, 5.5vw, 3.4rem);
+  }
 }

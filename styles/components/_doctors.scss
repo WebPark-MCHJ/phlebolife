@@ -103,4 +103,35 @@
       }
     }
   }
+
+  // Media
+  @media (max-width: 768px) {
+    padding: 7.5rem 0 0;
+
+    .swiper {
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      &-button-prev,
+      &-button-next {
+        display: none;
+      }
+    }
+
+    .doctor {
+      &__photo {
+        width: 100%;
+        height: auto;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &__name {
+        font-size: 1.8rem;
+      }
+    }
+  }
 }

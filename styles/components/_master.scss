@@ -115,4 +115,44 @@
       }
     }
   }
+
+  // Media
+  @media (max-width: 768px) {
+    padding: 7.5rem 0 0;
+
+    &__list {
+      margin: 0;
+    }
+
+    .controllers {
+      display: none;
+    }
+
+    .event {
+      flex-flow: column;
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0;
+
+      &__title {
+        font-size: 2rem;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.25;
+      }
+
+      &__description {
+        font-size: 1.5rem;
+      }
+
+      .col {
+        width: 100%;
+
+        &__info {
+          order: 1;
+          padding: 0;
+          margin-top: 1em;
+        }
+      }
+    }
+  }
 }

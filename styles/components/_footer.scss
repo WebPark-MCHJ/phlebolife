@@ -165,4 +165,47 @@
       }
     }
   }
+
+  // Media
+  @media (max-width: 768px) {
+    padding: 7.5rem 0 0;
+    flex-flow: column;
+
+    &__about {
+      max-width: 90%;
+
+      p {
+        font-size: 1.5rem;
+        line-height: 1.4;
+      }
+    }
+
+    &__schedule {
+      margin: 3rem 0 5rem;
+      max-width: 100%;
+      position: relative;
+      left: 0;
+      top: 2rem;
+      padding: 20px;
+
+      ul {
+        li {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    &__tab {
+      margin-top: 5rem;
+      padding: 0;
+
+      .body {
+        .address__tg {
+          padding: 0;
+          text-align: initial;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
 }

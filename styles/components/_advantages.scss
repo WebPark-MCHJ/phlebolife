@@ -35,4 +35,25 @@
       margin-right: 0.75em;
     }
   }
+
+  // Media
+  @media (max-width: 768px) {
+    padding: 7.5rem 0 0;
+
+    &__title {
+      margin-bottom: 2em;
+    }
+
+    &__list {
+      display: block;
+    }
+
+    .advantage {
+      width: 100%;
+
+      h3 {
+        font-size: 1.6rem;
+      }
+    }
+  }
 }

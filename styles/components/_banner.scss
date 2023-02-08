@@ -125,4 +125,60 @@
     background: #dcf2ff;
     z-index: 1;
   }
+
+  // Media
+  @media (max-width: 768px) {
+    .content {
+      padding: 10vh 0 5vh;
+    }
+
+    .cta {
+      &__title {
+        font-size: 8rem;
+        font-size: clamp(5rem, 15vw, 8rem);
+      }
+
+      &__subtitle {
+        font-size: 2rem;
+        font-size: clamp(1.7rem, 3vw, 2rem);
+        width: 100%;
+        max-width: 50ch;
+      }
+
+      &__description {
+        font-size: 1.5rem;
+        width: 100%;
+      }
+
+      &__btn {
+        font-size: 1.6rem;
+      }
+    }
+
+    .woman {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    .statistics {
+      position: static;
+      display: block;
+      box-shadow: none;
+      padding: 0;
+
+      &__item {
+        width: 100%;
+        margin: 1.5em 0;
+        text-align: initial;
+      }
+
+      &__number {
+        font-size: 4rem;
+        font-size: clamp(3rem, 10vw, 4.6rem);
+      }
+    }
+  }
 }

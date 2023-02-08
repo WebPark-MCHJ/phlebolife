@@ -136,4 +136,42 @@
       color: inherit;
     }
   }
+
+  // Media
+  @media (max-width: 768px) {
+    padding: 7.5rem 0 0;
+
+    &__title {
+      margin-bottom: 2em;
+    }
+
+    .list-of-treatments {
+      display: block;
+      margin: 0;
+      box-shadow: none;
+
+      .treatment {
+        width: 100%;
+        margin-bottom: 3rem;
+        padding: 1em;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 14px;
+
+        &__body {
+          * {
+            font-size: 1.5rem;
+          }
+        }
+
+        &:nth-child(3n + 2) {
+          position: relative;
+
+          &::after,
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }

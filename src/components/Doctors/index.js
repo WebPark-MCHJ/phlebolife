@@ -36,8 +36,22 @@ const Doctors = ({ data }) => {
         navigation={true}
         pagination={true}
         modules={[FreeMode, Navigation, Pagination]}
-        slidesPerView={3}
-        spaceBetween={50}
+        slidesPerView={1}
+        spaceBetween={100}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
       >
         {data.map((doctor, i) => (
           <SwiperSlide key={i}>

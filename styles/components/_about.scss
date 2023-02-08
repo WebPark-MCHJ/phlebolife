@@ -111,4 +111,33 @@
       }
     }
   }
+
+  // Media
+  @media (max-width: 768px) {
+    padding: 7.5rem 0 0;
+
+    .main {
+      width: 100%;
+
+      &__paragraph {
+        font-size: 1.5rem;
+      }
+
+      &-contacts {
+        display: block;
+
+        &__item {
+          margin: 2em 0;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .rectangle {
+      display: none;
+    }
+  }
 }
