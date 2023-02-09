@@ -13,6 +13,8 @@
   .locales {
     display: flex;
     list-style: none;
+    position: relative;
+    z-index: 3;
 
     a {
       text-decoration: none;
