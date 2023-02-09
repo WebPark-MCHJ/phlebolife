@@ -7,10 +7,13 @@ import Request from "../Request/Request";
 export const Cta = () => {
   const { t: translate } = useTranslation("banner");
   const [active, setActive] = useState(false);
-  useEffect(() => {  
+
+  useEffect(() => {
+    const header = document.querySelector(".header__btn");
     active
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "");
+    active ? (header.style.opacity = "0") : (header.style.opacity = "1");
   }, [active]);
 
   return (
